@@ -3,27 +3,37 @@ import './App.css';
 
 function App() {
   //state hook
-  //useState is a Hook that lets you add React state to function components.
+  //useState is a Hook that lets you add React state to function components
+  //state: local data storage that is only local to the component
   const [newItem, setNewItem] = useState('');
   //empty array that will hold all newitems
   const [items, setItems] = useState([]);
 
-  //helper functions
+  //HELPER FUNCTIONS
+
+  //ADDS new item to the array
   function addItem() {
+    //checks if the item is empty, then alerts user if empty
     if (!newItem) {
       alert('plz enter something!');
       return;
     }
 
+    //generates random id for item
     const item = {
       id: Math.floor(Math.random() * 1000),
       value: newItem,
     };
+    //adds new item to array of the items
     setItems((oldList) => [...oldList, item]);
+    //resets newItem to og state
     setNewItem('');
 
+    //checking to see if works
     console.log(items);
   }
+
+  //DELETES item, based on the key (item)
 
   return (
     <div className="App">

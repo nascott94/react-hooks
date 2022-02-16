@@ -97,6 +97,10 @@ function App() {
                     value={updatedText}
                     onChange={(e) => setUpdatedText(e.target.value)}
                   />
+                  <button onClick={() => editItem(item.id, updatedText)}>
+                    {' '}
+                    Update
+                  </button>
                 </div>
               ) : null}
             </div>
